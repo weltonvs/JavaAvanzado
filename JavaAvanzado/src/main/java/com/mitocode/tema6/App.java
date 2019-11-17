@@ -31,6 +31,16 @@ public class App {
 		//Para ordenar la lista se hace uso del sort de Colletions
 		Collections.sort(listaString);
 		System.out.println("Lista ordenada " + listaString);
+		
+		List<Persona> listaPersonas = new ArrayList<>();
+		listaPersonas.add(new Persona(1,"Welton",25));
+		listaPersonas.add(new Persona(2,"Lucia",24));
+		listaPersonas.add(new Persona(3,"Joao",2));		
+		System.out.println("*** Lista de Personas ***");
+		System.out.println("Lista sin ordenar");
+		for(Persona elemento: listaPersonas) {
+			System.out.println(elemento.toString());
+		}
 	}
 
 }
