@@ -33,6 +33,7 @@ public class AppTreeSet {
 				listaPersonas.add(new Persona(4,"Jaime",25));
 				listaPersonas.add(new Persona(5,"Mito",26));
 				listaPersonas.add(new Persona(6,"AAA",27));
+				listaPersonas.add(new Persona(1,"MitoCode",22));
 				for (Persona elemento : listaPersonas) {
 					System.out.println(elemento.toString());
 				}

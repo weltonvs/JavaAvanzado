@@ -1,6 +1,6 @@
 package com.mitocode.tema6.treeset;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{
 	private int id;
 	private String nombre;
 	private int edad;
@@ -97,5 +97,14 @@ public class Persona {
 			return false;
 		return true;
 	}
+	/**
+	 * Implementa el método compareTo de la interfaz Comparable. 
+	 */
+	@Override
+	public int compareTo(Persona obj) {
+		
+		return this.edad - obj.getEdad();
+	}
+	
 	
 }
