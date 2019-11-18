@@ -34,8 +34,8 @@ public class App {
 		
 		List<Persona> listaPersonas = new ArrayList<>();
 		listaPersonas.add(new Persona(1,"Welton",25));
-		listaPersonas.add(new Persona(2,"Lucia",24));
-		listaPersonas.add(new Persona(3,"Joao",2));		
+		listaPersonas.add(new Persona(2,"Lucia",2));
+		listaPersonas.add(new Persona(3,"Joao",24));		
 		System.out.println("*** Lista de Personas ***");
 		System.out.println("Lista sin ordenar");
 		for(Persona elemento: listaPersonas) {
@@ -44,6 +44,12 @@ public class App {
 		
 		Collections.sort(listaPersonas,new NombreComparator());
 		System.out.println("Lista ordena por nombre");
+		for(Persona elemento: listaPersonas) {
+			System.out.println(elemento.toString());
+		}
+		
+		Collections.sort(listaPersonas,new EdadCompator());
+		System.out.println("Lista ordena por edad");
 		for(Persona elemento: listaPersonas) {
 			System.out.println(elemento.toString());
 		}
