@@ -1,6 +1,6 @@
 package com.mitocode.tema6;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{
 	private int id;
 	private String nombre;
 	private int edad;
@@ -62,5 +62,13 @@ public class Persona {
 	public String toString() {
 		return "Persona [id=" + id + ", nombre=" + nombre + ", edad=" + edad + "]";
 	}
+	@Override
+	public int compareTo(Persona obj) {
+		
+		//return this.edad - obj.getEdad();//Utilizado para comparar enteros.
+		return this.nombre.compareTo(obj.getNombre());//Para utilizar para comparar Strings.
+	}
+	
+	
 	
 }

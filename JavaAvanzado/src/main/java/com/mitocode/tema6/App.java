@@ -53,6 +53,13 @@ public class App {
 		for(Persona elemento: listaPersonas) {
 			System.out.println(elemento.toString());
 		}
+		
+		System.out.println("Utilizando la interfaz Comparable en la clase Persona");
+		Collections.sort(listaPersonas);
+		System.out.println("Lista ordena por edad");
+		for(Persona elemento: listaPersonas) {
+			System.out.println(elemento.toString());
+		}
 	}
 
 }
