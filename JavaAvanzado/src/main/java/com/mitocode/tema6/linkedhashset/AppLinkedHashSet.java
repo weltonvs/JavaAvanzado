@@ -1,7 +1,5 @@
 package com.mitocode.tema6.linkedhashset;
 
-
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
