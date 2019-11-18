@@ -41,6 +41,12 @@ public class App {
 		for(Persona elemento: listaPersonas) {
 			System.out.println(elemento.toString());
 		}
+		
+		Collections.sort(listaPersonas,new NombreComparator());
+		System.out.println("Lista ordena por nombre");
+		for(Persona elemento: listaPersonas) {
+			System.out.println(elemento.toString());
+		}
 	}
 
 }
