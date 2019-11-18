@@ -26,8 +26,8 @@ public class AppSet {
 		Set<Persona> listaPersonas = new HashSet<>();
 		listaPersonas.add(new Persona(1,"MitoCode",22));
 		listaPersonas.add(new Persona(2,"Mito",22));
-		listaPersonas.add(new Persona(1,"Code",22));
-		listaPersonas.add(new Persona(1,"MitoCode",20));
+		listaPersonas.add(new Persona(3,"Code",22));
+		listaPersonas.add(new Persona(1,"MitoCode",22));
 		listaPersonas.add(new Persona(1,"AAA",20));
 		
 		System.out.println("Colección de elementos complejos como una Persona");
