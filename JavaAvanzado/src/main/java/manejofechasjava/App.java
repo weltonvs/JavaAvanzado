@@ -1,11 +1,16 @@
 package manejofechasjava;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 import java.util.Calendar;
+import java.util.Date;
 /**
  * Clase App
  * Manejo de fechas en java.
@@ -51,12 +56,63 @@ public class App {
 		}
 	}
 	
+	public void periodoEntreFechas(int version) {
+		if(version == 7) {
+			Calendar nascimiento = Calendar.getInstance();
+			Calendar actual = Calendar.getInstance();
+			
+			nascimiento.set(1991,0,21);
+			actual.set(2017,1,04);
+			
+			int anios = 0;
+			while(nascimiento.before(actual)) {
+				nascimiento.add(Calendar.YEAR, 1);
+				if(nascimiento.before(actual)) {
+					anios++;
+				}
+			}
+			System.out.println("Versión " + version + " de Java seria:" + anios + " años");
+		} else if(version == 8) {
+			LocalDate nascimiento = LocalDate.of(1991, 1, 21);
+			LocalDate actual = LocalDate.now();
+			
+			Period periodo = Period.between(nascimiento, actual);
+			System.out.println("Versión " + version + " de Java. Han transcurrido " + periodo.getYears() + " años " + periodo.getDays() + " dias desde " +
+			nascimiento + " hasta la fecha " + actual);
+		}
+		
+	}
+	
+	
+	public void convertir(int version) throws ParseException{
+		if(version == 7) {
+			String fecha = "21/01/1991";
+			DateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
+			Date fechaConvertida = formateador.parse(fecha);
+			System.out.println("Fecha convertida (con Java " + version + ") de String(" + fecha + ") a Date es: " + fechaConvertida);
+			
+			Date fechaActual = Calendar.getInstance().getTime();
+			formateador = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss a");
+			String fechaCadena = formateador.format(fechaActual);
+			System.out.println("Fecha actual convertida de Date a String es " + fechaCadena);
+		} else if(version == 8) {
+			String fecha = "21/01/1991";
+			LocalDate fechaLocal = LocalDate.parse(fecha);
+			System.out.println("Fecha convertida (con Java " + version + ") de String(" + fecha + ") a Date es: " + fechaLocal);
+			
+		}
+	}
+	
 	public static void main(String[] args) {
 		App app = new App();
 		try {
 			app.verificar(8);
 			app.medirTiempo(7);
 			app.medirTiempo(8);
+			app.periodoEntreFechas(7);
+			app.periodoEntreFechas(8);
+			app.convertir(7);
+			app.convertir(8);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
