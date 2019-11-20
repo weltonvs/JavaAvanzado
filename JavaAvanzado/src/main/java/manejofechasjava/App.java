@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 /**
@@ -97,9 +98,10 @@ public class App {
 			System.out.println("Fecha actual convertida de Date a String es " + fechaCadena);
 		} else if(version == 8) {
 			String fecha = "21/01/1991";
-			LocalDate fechaLocal = LocalDate.parse(fecha);
+			DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate fechaLocal = LocalDate.parse(fecha,formateador);
 			System.out.println("Fecha convertida (con Java " + version + ") de String(" + fecha + ") a Date es: " + fechaLocal);
-			
+			System.out.println("Fecha actual convertida de Date a String es " + formateador.format(fechaLocal));
 		}
 	}
 	
