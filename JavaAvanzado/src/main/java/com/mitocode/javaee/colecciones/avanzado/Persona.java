@@ -1,6 +1,6 @@
 package com.mitocode.javaee.colecciones.avanzado;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{
 	private int id;
 	private String nombre;
 	private int edad;
@@ -40,8 +40,11 @@ public class Persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	
-	
-	
-	
+
+	@Override
+	public int compareTo(Persona obj) {
+
+		return this.id - obj.getId();
+	}
 }
+

@@ -42,6 +42,16 @@ public class OrdenarColecciones {
 		for(Persona elemento: listaPersonas) {
 			System.out.println(elemento.getNombre() + "-" + elemento.getEdad());
 		}
+		
+		/**
+		 * Ordenar utilizando la propia clase Persona para ordenar según su criterio de ordenación.
+		 * Esta forma es una forma estandar utilizando el interfaz Comparable.
+		 */
+		Collections.sort(listaPersonas);
+		System.out.println("Ordenar una colección con objetos complejos según el criterio del comparador creado dentro de la clase Persona - Comparable.");
+		for(Persona elemento: listaPersonas) {
+			System.out.println(elemento.getId() + "-" + elemento.getNombre() + "-" + elemento.getEdad());
+		}
 	}
 }
 
